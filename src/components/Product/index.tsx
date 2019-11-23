@@ -30,8 +30,8 @@ const Product = ({
   return (
     <>
       <article id={id}>
-        <h2>{name}</h2>
-        <h3>{description}</h3>
+        <h2>Name: {name}</h2>
+        <h3>Description: {description}</h3>
         <img src={img} alt={name} />
         <p>Price: &pound;{price}</p>
       </article>
