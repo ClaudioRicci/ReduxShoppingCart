@@ -6,13 +6,15 @@ const Product = ({
   img,
   name,
   description,
-  price
+  price,
+  addFunc
 }: {
   id: any;
   img: string;
   name: string;
   description: string;
   price: number;
+  addFunc: any;
 }) => {
   // const Product = ({
   //   id,
@@ -35,7 +37,11 @@ const Product = ({
         <img src={img} alt={name} />
         <p>Price: &pound;{price}</p>
       </article>
-      <button>Add</button>
+      <button
+        onClick={() => addFunc({ id, img, name, description, price, units: 1 })}
+      >
+        Add
+      </button>
     </>
   );
 };

@@ -30,6 +30,27 @@ class App extends Component<AppProps, AppState> {
     };
   }
 
+  handleAddFunc(product) {
+    const existingProduct = this.state.cart.filter(p => p.id === product.id);
+
+    if (existingProduct.length > 0) {
+      const withoutExistingProduct = this.state.cart.filter(
+        p => p.id !== product.id
+      );
+      const updatedUnitsProduct = {
+        ...existingProduct[0],
+        units: existingProduct[0].units + product.units
+      };
+      this.setState({
+        cart: [...withoutExistingProduct, updatedUnitsProduct]
+      });
+    } else {
+      this.setState({
+        cart: [...this.state.cart, product]
+      });
+    }
+  }
+
   render() {
     return (
       <main>
@@ -41,7 +62,11 @@ class App extends Component<AppProps, AppState> {
           ))}
         </ul>
         {products.map(product => (
-          <Product key={product.id} {...product} />
+          <Product
+            key={product.id}
+            {...product}
+            addFunc={this.handleAddFunc.bind(this)}
+          />
         ))}
       </main>
     );
