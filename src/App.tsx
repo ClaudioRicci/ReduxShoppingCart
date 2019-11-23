@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Product from "./components/Product";
 
-const App: React.FC = () => {
+const products = [
+  {
+    id: 1,
+    name: "Beans",
+    description: "Baked Beans",
+    img: "./images/beans.jpg",
+    price: 0.5,
+    onOffer: true,
+    offerQuantityNeeded: 3,
+    offerPrice: 0.33,
+    byWeight: false,
+    individualWeight: 150,
+    volumeType: "kg"
+  },
+  {
+    id: 2,
+    name: "Coke",
+    description: "Bottle of Coke",
+    img: "./images/coke-can.jpg",
+    price: 0.7,
+    onOffer: true,
+    offerQuantityNeeded: 2,
+    offerPrice: 0.5,
+    byWeight: false,
+    individualWeight: 330,
+    volumeType: "ml"
+  },
+  {
+    id: 3,
+    name: "Orange",
+    description: "Orange",
+    img: "./images/orange.jpg",
+    price: 1.99,
+    onOffer: true,
+    offerQuantityNeeded: 0,
+    offerPrice: 0,
+    byWeight: true,
+    individualWeight: 0.2,
+    volumeType: "kg"
+  }
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      {products.map(product => (
+        <Product key={product.id} {...product} />
+      ))}
+    </main>
   );
-}
+};
 
 export default App;
