@@ -30,19 +30,25 @@ const Product = ({
   //   volumeType
   // }) => {
   return (
-    <>
+    <div className="ProductCard">
       <article id={id}>
-        <h2>Name: {name}</h2>
-        <h3>Description: {description}</h3>
+        <h2>
+          <span>Name:</span> {name}
+        </h2>
         <img src={img} alt={name} />
-        <p>Price: &pound;{price}</p>
+        <h3>
+          <span>Description:</span> {description}
+        </h3>
+        <p>
+          <span>Price:</span> &pound;{price}
+        </p>
       </article>
       <button
         onClick={() => addFunc({ id, img, name, description, price, units: 1 })}
       >
         Add
       </button>
-    </>
+    </div>
   );
 };
 export default Product;

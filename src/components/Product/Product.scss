@@ -1,10 +1,44 @@
-article {
-  background: #add8e6;
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-}
+.ProductCard {
+  border-radius: 1rem;
+  border: 2px #ccc solid;
 
-button {
-  clear: both;
+  article {
+    background: #add8e6;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    width: 100px;
+
+    span {
+      font-weight: bold;
+    }
+
+    img {
+      display: block;
+      height: 10rem;
+      width: auto;
+    }
+  }
+
+  button {
+    background: #f51b00;
+    border: 2px solid #ccc !important;
+    border-radius: 1rem;
+    color: #fff !important;
+    display: inline-block;
+    margin: 0 25% 1rem;
+    outline: none;
+    padding: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+    width: 50%;
+  }
+
+  button:hover {
+    color: #fff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+  }
 }
