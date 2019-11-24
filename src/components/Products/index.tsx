@@ -12,7 +12,7 @@ export default class Products extends React.PureComponent<any, any> {
         price: 0.5,
         onOffer: true,
         offerQuantityNeeded: 3,
-        offerPrice: 0.33,
+        offerPrice: 0.333,
         byWeight: false,
         individualWeight: 150,
         volumeType: "kg",
