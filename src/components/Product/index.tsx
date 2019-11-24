@@ -7,7 +7,14 @@ const Product = ({
   name,
   description,
   price,
-  addFunc
+  addFunc,
+  onOffer,
+  offerQuantityNeeded,
+  offerPrice,
+  byWeight,
+  individualWeight,
+  volumeType,
+  units
 }: {
   id: any;
   img: string;
@@ -15,34 +22,44 @@ const Product = ({
   description: string;
   price: number;
   addFunc: any;
+  onOffer: boolean;
+  offerQuantityNeeded: string;
+  offerPrice: number;
+  byWeight: boolean;
+  individualWeight: number;
+  volumeType: string;
+  units: number;
 }) => {
-  // const Product = ({
-  //   id,
-  //   name,
-  //   descrption,
-  //   img,
-  //   price,
-  //   onOffer,
-  //   offerQuantityNeeded,
-  //   offerPrice,
-  //   byWeight,
-  //   individualWeight,
-  //   volumeType
-  // }) => {
   return (
-    <>
+    <div className="ProductCard">
       <article id={id}>
-        <h2>Name: {name}</h2>
-        <h3>Description: {description}</h3>
+        <h2>
+          <span>Name:</span> {name}
+        </h2>
         <img src={img} alt={name} />
-        <p>Price: &pound;{price}</p>
+        <h3>
+          <span>Description:</span> {description},
+          {byWeight ? "" : `${individualWeight} ${volumeType}`}
+        </h3>
+        <p>
+          <span>Price:</span>&pound;{price}{" "}
+          {byWeight ? `per ${volumeType}` : ""}
+        </p>
+        {onOffer ? (
+          <div className="offerBox">
+            <h4>Special Offer:</h4>
+            <p>{offerQuantityNeeded} for the price of </p>
+          </div>
+        ) : (
+          ""
+        )}
       </article>
       <button
         onClick={() => addFunc({ id, img, name, description, price, units: 1 })}
       >
         Add
       </button>
-    </>
+    </div>
   );
 };
 export default Product;
