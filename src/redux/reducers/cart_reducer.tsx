@@ -6,7 +6,6 @@ const INITIAL_STATE = [
     id: 1,
     name: "Beans",
     description: "Baked Beans",
-    img: "./images/beans.jpg",
     price: 0.5,
     onOffer: true,
     offerQuantityNeeded: 3,

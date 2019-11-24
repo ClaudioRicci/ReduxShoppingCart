@@ -3,7 +3,6 @@ import "./Product.scss";
 
 const Product = ({
   id,
-  img,
   name,
   description,
   price,
@@ -17,7 +16,6 @@ const Product = ({
   units
 }: {
   id: any;
-  img: string;
   name: string;
   description: string;
   price: number;
@@ -36,7 +34,6 @@ const Product = ({
         <h2>
           <span>Name:</span> {name}
         </h2>
-        <img src={img} alt={name} />
         <h3>
           <span>Description:</span> {description},
           {byWeight ? "" : `${individualWeight} ${volumeType}`}
@@ -55,7 +52,7 @@ const Product = ({
         )}
       </article>
       <button
-        onClick={() => addFunc({ id, img, name, description, price, units: 1 })}
+        onClick={() => addFunc({ id, name, description, price, units: 1 })}
       >
         Add
       </button>

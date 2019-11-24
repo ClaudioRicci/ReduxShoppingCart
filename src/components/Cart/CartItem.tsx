@@ -4,7 +4,6 @@ const CartItem = ({
   id,
   name,
   description,
-  img,
   price,
   onOffer,
   offerQuantityNeeded,
@@ -15,7 +14,6 @@ const CartItem = ({
   units
 }) => (
   <li>
-    <img src={img} alt={description} />
     <div>
       <span>{name}</span>
       <span>{description}</span>
