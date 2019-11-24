@@ -1,13 +1,17 @@
 .ProductCard {
-  border-radius: 1rem;
   border: 2px #ccc solid;
+  border-radius: 1rem;
+  margin: 1rem;
+  position: relative;
 
   article {
     background: #add8e6;
-    padding: 1rem;
+    height: 25rem;
+    line-height: 1.4rem;
+    padding: 1rem 1rem 2rem;
     margin: 1rem;
     text-align: center;
-    width: 100px;
+    width: 20vw;
 
     span {
       font-weight: bold;
@@ -18,17 +22,29 @@
       height: 10rem;
       width: auto;
     }
+    .offerBox {
+      background: #f51b00;
+      border: 3px #fff dashed;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      padding: 1rem;
+    }
   }
 
   button {
-    background: #f51b00;
+    background: #00ab66;
     border: 2px solid #ccc !important;
     border-radius: 1rem;
+    bottom: 2rem;
     color: #fff !important;
     display: inline-block;
-    margin: 0 25% 1rem;
+    // margin: 0 25% 1rem;
+    left: 25%;
     outline: none;
     padding: 20px;
+    position: absolute;
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.4s ease 0s;

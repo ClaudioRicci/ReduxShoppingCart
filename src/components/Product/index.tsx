@@ -45,16 +45,14 @@ const Product = ({
           <span>Price:</span>&pound;{price}{" "}
           {byWeight ? `per ${volumeType}` : ""}
         </p>
-        <div>
-          {onOffer ? (
-            <>
-              <h4>Special Offer:</h4>
-              <p>{offerQuantityNeeded} for the price of </p>
-            </>
-          ) : (
-            ""
-          )}
-        </div>
+        {onOffer ? (
+          <div className="offerBox">
+            <h4>Special Offer:</h4>
+            <p>{offerQuantityNeeded} for the price of </p>
+          </div>
+        ) : (
+          ""
+        )}
       </article>
       <button
         onClick={() => addFunc({ id, img, name, description, price, units: 1 })}
