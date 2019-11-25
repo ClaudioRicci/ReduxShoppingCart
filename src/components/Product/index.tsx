@@ -8,11 +8,13 @@ const Product = ({
   price,
   addFunc,
   onOffer,
-  offerQuantityNeeded,
+  offerQuantityNeedToBuy,
+  offerQuantityForThePriceOf,
   offerPrice,
   byWeight,
   individualWeight,
   volumeType,
+  discountType,
   units
 }: {
   id: any;
@@ -21,11 +23,13 @@ const Product = ({
   price: number;
   addFunc: any;
   onOffer: boolean;
-  offerQuantityNeeded: string;
+  offerQuantityNeedToBuy: number;
+  offerQuantityForThePriceOf: number;
   offerPrice: number;
   byWeight: boolean;
   individualWeight: number;
   volumeType: string;
+  discountType: string;
   units: number;
 }) => {
   return (
@@ -39,24 +43,41 @@ const Product = ({
           {byWeight ? "" : `${individualWeight} ${volumeType}`}
         </h3>
         <p>
-          <span>Price:</span>&pound;{price}{" "}
+          <span>Price:</span>&pound;{price.toFixed(2)}{" "}
           {byWeight ? `per ${volumeType}` : ""}
         </p>
         {onOffer ? (
           <div className="offerBox">
             <h4>Special Offer:</h4>
-            <p>{offerQuantityNeeded} for the price of </p>
+            <p>{offerQuantityNeedToBuy} for</p> {offerQuantityForThePriceOf}
           </div>
         ) : (
           ""
         )}
       </article>
       <button
-        onClick={() => addFunc({ id, name, description, price, units: 1 })}
+        onClick={() =>
+          addFunc({
+            id,
+            name,
+            description,
+            price,
+            onOffer,
+            offerQuantityNeedToBuy,
+            offerQuantityForThePriceOf,
+            offerPrice,
+            byWeight,
+            individualWeight,
+            volumeType,
+            discountType,
+            units: 1
+          })
+        }
       >
         Add
       </button>
     </div>
   );
 };
+
 export default Product;

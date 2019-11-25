@@ -5,11 +5,13 @@ const productsData = [
     description: "Baked Beans",
     price: 0.5,
     onOffer: true,
-    offerQuantityNeeded: 3,
+    offerQuantityNeedToBuy: 3,
+    offerQuantityForThePriceOf: 2,
     offerPrice: 0.33,
     byWeight: false,
     individualWeight: 150,
-    volumeType: "kg"
+    volumeType: "kg",
+    discountType: "group"
   },
   {
     id: 2,
@@ -17,11 +19,13 @@ const productsData = [
     description: "Coke can",
     price: 0.7,
     onOffer: true,
-    offerQuantityNeeded: 2,
+    offerQuantityNeedToBuy: 2,
+    offerQuantityForThePriceOf: 2,
     offerPrice: 0.5,
     byWeight: false,
     individualWeight: 330,
-    volumeType: "ml"
+    volumeType: "ml",
+    discountType: "price"
   },
   {
     id: 3,
@@ -29,11 +33,13 @@ const productsData = [
     description: "Orange",
     price: 1.99,
     onOffer: false,
-    offerQuantityNeeded: 0,
+    offerQuantityNeedToBuy: 0,
+    offerQuantityForThePriceOf: 0,
     offerPrice: 0,
     byWeight: true,
     individualWeight: 0.2,
-    volumeType: "kg"
+    volumeType: "kg",
+    discountType: "none"
   }
 ];
 

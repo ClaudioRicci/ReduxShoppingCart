@@ -13,7 +13,6 @@ type AppState = { name: string; cart: any };
 class App extends Component<AppProps, AppState> {
   render() {
     const { cart, addToCartAction } = this.props;
-    console.log("cart from state " + this.props.cart);
     return (
       <main>
         <Products products={productsData} addToCartAction={addToCartAction} />

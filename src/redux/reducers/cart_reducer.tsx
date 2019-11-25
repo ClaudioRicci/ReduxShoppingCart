@@ -8,11 +8,13 @@ const INITIAL_STATE = [
     description: "Baked Beans",
     price: 0.5,
     onOffer: true,
-    offerQuantityNeeded: 3,
+    offerQuantityNeedToBuy: 3,
+    offerQuantityForThePriceOf: 2,
     offerPrice: 0.333,
     byWeight: false,
     individualWeight: 150,
     volumeType: "kg",
+    discountType: "group",
     units: 1
   }
 ];
