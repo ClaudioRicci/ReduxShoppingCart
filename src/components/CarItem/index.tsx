@@ -15,13 +15,14 @@ const CartItem = ({
 }) => (
   <li>
     <div>
-      <span>{name}</span>
       <span>{description}</span>
     </div>
     <div>
       <span>Units: {units}</span>
-      <button>+</button>
-      <button>-</button>
+      <div className="unitButtons">
+        <button>+</button>
+        <button>-</button>
+      </div>
     </div>
   </li>
 );

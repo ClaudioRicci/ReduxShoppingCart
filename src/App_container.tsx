@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { addToCartAction } from "./redux/actions/card_actions";
 import productsData from "./data/ProductsData";
 import Products from "./components/Products";
-import CartList from "./components/Cart/CartList";
+import CartList from "./components/CartList";
 
 // const data = productsData;
 type AppProps = { cart: any; addToCartAction: any };
@@ -16,8 +16,8 @@ class App extends Component<AppProps, AppState> {
     console.log("cart from state " + this.props.cart);
     return (
       <main>
-        <CartList cart={cart} />
         <Products products={productsData} addToCartAction={addToCartAction} />
+        <CartList cart={cart} />
       </main>
     );
   }
