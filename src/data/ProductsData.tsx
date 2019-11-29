@@ -15,7 +15,7 @@ const productsData = [
   {
     id: 2,
     name: "Coke",
-    description: "Bottle of Coke",
+    description: "Coke can",
     img: "./images/coke-can.jpg",
     price: 0.7,
     onOffer: true,
@@ -31,7 +31,7 @@ const productsData = [
     description: "Orange",
     img: "./images/orange.jpg",
     price: 1.99,
-    onOffer: true,
+    onOffer: false,
     offerQuantityNeeded: 0,
     offerPrice: 0,
     byWeight: true,

@@ -1,10 +1,59 @@
-article {
-  background: #add8e6;
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-}
+.ProductCard {
+  border: 2px #ccc solid;
+  border-radius: 1rem;
+  margin: 1rem;
+  position: relative;
 
-button {
-  clear: both;
+  article {
+    background: #add8e6;
+    height: 25rem;
+    line-height: 1.4rem;
+    padding: 1rem 1rem 2rem;
+    margin: 1rem;
+    text-align: center;
+    width: 20vw;
+
+    span {
+      font-weight: bold;
+    }
+
+    img {
+      display: block;
+      height: 10rem;
+      width: auto;
+    }
+    .offerBox {
+      background: #f51b00;
+      border: 3px #fff dashed;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  button {
+    background: #00ab66;
+    border: 2px solid #ccc !important;
+    border-radius: 1rem;
+    bottom: 2rem;
+    color: #fff !important;
+    display: inline-block;
+    left: 25%;
+    outline: none;
+    padding: 20px;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+    width: 50%;
+  }
+
+  button:hover {
+    color: #fff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+  }
 }
