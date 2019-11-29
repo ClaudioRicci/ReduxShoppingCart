@@ -3,31 +3,33 @@ import "./Product.scss";
 
 const Product = ({
   id,
-  img,
   name,
   description,
   price,
   addFunc,
   onOffer,
-  offerQuantityNeeded,
+  offerQuantityNeedToBuy,
+  offerQuantityForThePriceOf,
   offerPrice,
   byWeight,
   individualWeight,
   volumeType,
+  discountType,
   units
 }: {
   id: any;
-  img: string;
   name: string;
   description: string;
   price: number;
   addFunc: any;
   onOffer: boolean;
-  offerQuantityNeeded: string;
+  offerQuantityNeedToBuy: number;
+  offerQuantityForThePriceOf: number;
   offerPrice: number;
   byWeight: boolean;
   individualWeight: number;
   volumeType: string;
+  discountType: string;
   units: number;
 }) => {
   return (
@@ -36,30 +38,46 @@ const Product = ({
         <h2>
           <span>Name:</span> {name}
         </h2>
-        <img src={img} alt={name} />
         <h3>
           <span>Description:</span> {description},
           {byWeight ? "" : `${individualWeight} ${volumeType}`}
         </h3>
         <p>
-          <span>Price:</span>&pound;{price}{" "}
+          <span>Price:</span>&pound;{price.toFixed(2)}{" "}
           {byWeight ? `per ${volumeType}` : ""}
         </p>
         {onOffer ? (
           <div className="offerBox">
             <h4>Special Offer:</h4>
-            <p>{offerQuantityNeeded} for the price of </p>
+            <p>{offerQuantityNeedToBuy} for</p> {offerQuantityForThePriceOf}
           </div>
         ) : (
           ""
         )}
       </article>
       <button
-        onClick={() => addFunc({ id, img, name, description, price, units: 1 })}
+        onClick={() =>
+          addFunc({
+            id,
+            name,
+            description,
+            price,
+            onOffer,
+            offerQuantityNeedToBuy,
+            offerQuantityForThePriceOf,
+            offerPrice,
+            byWeight,
+            individualWeight,
+            volumeType,
+            discountType,
+            units: 1
+          })
+        }
       >
         Add
       </button>
     </div>
   );
 };
+
 export default Product;

@@ -1,0 +1,39 @@
+.shoppingCart {
+  border: 2px #ccc solid;
+  border-radius: 1rem;
+  margin: 1rem;
+  height: auto;
+  padding: 2rem;
+  text-align: center;
+
+  h1 {
+    font-size: 1.6rem;
+  }
+  h1,
+  li {
+    line-height: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  button {
+    background: #00ab66;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: bold;
+    outline: none;
+    padding: 0.25rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+    width: 2rem;
+  }
+
+  button:hover {
+    color: #fff;
+    background: #f6b93b;
+    border-color: #f6b93b;
+    transition: all 0.4s ease 0s;
+  }
+}
